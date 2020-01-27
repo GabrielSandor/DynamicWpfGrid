@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:DynamicWpfGrid"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <!-- https://stackoverflow.com/questions/2913854/wpf-dynamic-layout-with-itemscontrol-and-grid -->
+    <Grid x:Name="MainGrid">
         <ItemsControl ItemsSource="{Binding Path=CustomControls}">
             <ItemsControl.ItemContainerStyle>
                 <Style>
@@ -16,17 +17,9 @@
             </ItemsControl.ItemContainerStyle>
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <Grid ShowGridLines="True">
-                        <Grid.RowDefinitions>
-                            <RowDefinition />
-                            <RowDefinition />
-                            <RowDefinition />
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition />
-                            <ColumnDefinition />
-                            <ColumnDefinition />
-                        </Grid.ColumnDefinitions>
+                    <Grid ShowGridLines="True" x:Name="ItemsPanelTemplateGrid"
+                          local:GridHelpers.RowCount="{Binding Rows}"
+                          local:GridHelpers.ColumnCount="{Binding Columns}">
                     </Grid>
                 </ItemsPanelTemplate>
             </ItemsControl.ItemsPanel>
