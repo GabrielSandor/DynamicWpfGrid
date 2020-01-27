@@ -18,10 +18,11 @@ namespace DynamicWpfGrid
         {
             var mainWindowViewModel = new MainWindowViewModel
             {
-                CustomControlModels = new ObservableCollection<CustomControlViewModel>
+                CustomControls = new ObservableCollection<CustomControl>
                 {
-                    new CustomControlViewModel { Caption = "A", Column = 0, Row = 0 },
-                    new CustomControlViewModel { Caption = "B", Column = 1, Row = 1 }
+                    new CustomControl(new CustomControlViewModel() { Caption = "A", Column = 0, Row = 0 }),
+                    new CustomControl(new CustomControlViewModel() { Caption = "B", Column = 1, Row = 1 }),
+                    new CustomControl(new CustomControlViewModel() { Caption = "C", Column = 2, Row = 2 })
                 }
             };
 

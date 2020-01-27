@@ -6,13 +6,8 @@
         xmlns:local="clr-namespace:DynamicWpfGrid"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Window.Resources>
-        <DataTemplate DataType="{x:Type local:CustomControlViewModel}">
-            <Label Content="{Binding Caption}" Grid.Row="{Binding Path=Row}" Grid.Column="{Binding Path=Column}" />
-        </DataTemplate>
-    </Window.Resources>
     <Grid>
-        <ItemsControl ItemsSource="{Binding Path=CustomControlModels}">
+        <ItemsControl ItemsSource="{Binding Path=CustomControls}">
             <ItemsControl.ItemContainerStyle>
                 <Style>
                     <Setter Property="Grid.Row" Value="{Binding Row}"/>

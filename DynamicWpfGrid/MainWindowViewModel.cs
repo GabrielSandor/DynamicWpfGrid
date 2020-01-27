@@ -1,17 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Text;
+﻿using System.Collections.ObjectModel;
 
 namespace DynamicWpfGrid
 {
     public class MainWindowViewModel
     {
-        public ObservableCollection<CustomControlViewModel> CustomControlModels { get; set; }
+        public ObservableCollection<CustomControl> CustomControls { get; set; }
 
         public MainWindowViewModel()
         {
-            CustomControlModels = new ObservableCollection<CustomControlViewModel>();
+            CustomControls = new ObservableCollection<CustomControl>();
         }
     }
 }
